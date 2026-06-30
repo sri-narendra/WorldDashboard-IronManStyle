@@ -1,12 +1,15 @@
 import asyncio
 import json
 import logging
+import sys
 import time
 from contextlib import asynccontextmanager
+from pathlib import Path
 from typing import Any
 
+sys.path.insert(0, str(Path(__file__).parent))
+
 import httpx
-from pathlib import Path
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
